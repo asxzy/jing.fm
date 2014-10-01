@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Jing+ Music</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+var gui, win, tray, menu;
+gui = require('nw.gui');
+
+win = gui.Window.get();
+document.location="http://jing.fm"
+
+
+win.on('close',function(ev){
+    tray = new gui.Tray({ icon: "icon.png" });
+    win.hide()
+    tray.on('click', function() {
+        win.show();
+        this.remove();
+        tray = null;
+    });
+    if (ev.source != "window") {
+        win.close(true);
+    }
+});
+
+
+menu = new gui.Menu({type:"menubar"});
+menu.createMacBuiltin("jing.fm",{
+    hideEdit: true,
+    hideWindow: true
+});
+
+customMenu = new gui.Menu();
+customMenu.append(
+    new gui.MenuItem({
+        label: 'Tray',
+        click: function(){
+            tray = new gui.Tray({ icon: 'icon.png' });
+            win.hide()
+            tray.on('click', function() {
+                win.show();
+                this.remove();
+                tray = null;
+            });
+        }
+    })
+);
+menu.append(
+        new gui.MenuItem({
+            label: 'Tray',
+            submenu: customMenu
+        })
+);
+win.menu = menu;
+</script>
+</head>
+<body>
+</body>
+</html>

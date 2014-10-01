@@ -1,0 +1,24 @@
+{
+  "name": "Jing.fm",
+  "main": "index.html",
+  "version": "0.0.1",
+  "maintainers": [
+    {
+      "name": "asxzy",
+      "email": "asxzy@asxzy.net",
+      "web": "http://asxzy.net/"
+    }
+  ],
+  "window": {
+    "title": "Jing.fm",
+    "toolbar": false,
+    "width": 1024,
+    "height": 768,
+    "position": "center",
+    "min_width": 1024,
+    "min_height": 768
+  },
+  "webkit": {
+    "plugin": true
+  }
+}
