@@ -8,7 +8,7 @@ var gui, win, tray, menu;
 gui = require('nw.gui');
 win = gui.Window.get();
 
-tray = new gui.Tray({ title:"Jing.fm", icon: "icon.png" });
+tray = new gui.Tray({ icon: "icon.png" });
 trayMenu = new gui.Menu();
 trayMenu.append(new gui.MenuItem({label:"Show",click:function(){
     win.setShowInTaskbar(true);
