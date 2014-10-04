@@ -42,6 +42,35 @@ win.on('close',function(event){
         win.hide();
     }
 });
+
+
+
+gui.App.registerGlobalHotKey(new gui.Shortcut(
+ {
+  key : "MediaNextTrack",
+  active : function() {
+    win.window.$('#playerNext').click();
+  }
+}));
+
+
+gui.App.registerGlobalHotKey(new gui.Shortcut(
+ {
+  key : "MediaPlayPause",
+  active : function() {
+    win.window.$('#playCtl').click();
+  }
+}));
+
+
+gui.App.registerGlobalHotKey(new gui.Shortcut(
+ {
+  key : "Ctrl+Shift+R",
+  active : function() {
+    win.window.$('#playerLove').click();
+  }
+}));
+
 document.location="http://jing.fm"
 </script>
 </head>
