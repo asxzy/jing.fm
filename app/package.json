@@ -11,7 +11,7 @@
   ],
   "window": {
     "title": "Jing.fm",
-    "toolbar": true,
+    "toolbar": false,
     "width": 1024,
     "height": 768,
     "position": "center",
@@ -20,5 +20,5 @@
   },
   "webkit": {
     "plugin": true
-  },
+  }
 }
