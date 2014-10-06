@@ -4,9 +4,10 @@
 <title>Jing+ Music</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript">
-var gui, win, tray, menu;
+var gui, win, tray, menu, notify;
 gui = require('nw.gui');
 win = gui.Window.get();
+
 
 tray = new gui.Tray({ icon: "icon.png" });
 trayMenu = new gui.Menu();
@@ -38,6 +39,7 @@ win.on('close',function(event){
     if(event && event.source != "window"){
         win.close(true);
     }else{
+        notify = new window.Notification("Jing.fm now running in tray");
         win.setShowInTaskbar(false);
         win.hide();
     }
@@ -50,8 +52,20 @@ gui.App.registerGlobalHotKey(new gui.Shortcut(
   key : "MediaNextTrack",
   active : function() {
     win.window.$('#playerNext').click();
+    notify = new window.Notification("Next song");
   }
 }));
+
+
+gui.App.registerGlobalHotKey(new gui.Shortcut(
+ {
+  key : "Ctrl+Shift+Right",
+  active : function() {
+    win.window.$('#playerNext').click();
+    notify = new window.Notification("Next song");
+  }
+}));
+
 
 
 gui.App.registerGlobalHotKey(new gui.Shortcut(
@@ -59,8 +73,20 @@ gui.App.registerGlobalHotKey(new gui.Shortcut(
   key : "MediaPlayPause",
   active : function() {
     win.window.$('#playCtl').click();
+    notify = new window.Notification("Pause/Continue");
   }
 }));
+
+
+gui.App.registerGlobalHotKey(new gui.Shortcut(
+ {
+  key : "Ctrl+Shift+S",
+  active : function() {
+    win.window.$('#playCtl').click();
+    notify = new window.Notification("Pause/Continue");
+  }
+}));
+
 
 
 gui.App.registerGlobalHotKey(new gui.Shortcut(
@@ -68,6 +94,7 @@ gui.App.registerGlobalHotKey(new gui.Shortcut(
   key : "Ctrl+Shift+R",
   active : function() {
     win.window.$('#playerLove').click();
+    notify = new window.Notification("Love this sone");
   }
 }));
 
