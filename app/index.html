@@ -20,10 +20,14 @@ trayMenu.append(new gui.MenuItem({label:"Hide",click:function(){
     win.hide();
 }}));
 trayMenu.append(new gui.MenuItem({type:'separator'}));
-trayMenu.append(new gui.MenuItem({label:"Next",click:function(){win.window.$('#playerNext').click();}}));
-trayMenu.append(new gui.MenuItem({label:"Pause",click:function(){win.window.$('#playCtl').click();}}));
+trayMenu.append(new gui.MenuItem({label:"Heart Radio",click:function(){win.window.$('#loveRd').click();}}));
+trayMenu.append(new gui.MenuItem({label:"Genius Radio",click:function(){win.window.$('#psnRd').click();}}));
+trayMenu.append(new gui.MenuItem({label:"Random Radio",click:function(){win.window.$('#gnsBtn').click();}}));
+trayMenu.append(new gui.MenuItem({type:'separator'}));
+trayMenu.append(new gui.MenuItem({label:"Next(⌘+Shift+→)",click:function(){win.window.$('#playerNext').click();}}));
+trayMenu.append(new gui.MenuItem({label:"Pause(⌘+Shift+S)",click:function(){win.window.$('#playCtl').click();}}));
 trayMenu.append(new gui.MenuItem({label:"Hate",click:function(){win.window.$('#playerHate').click();}}));
-trayMenu.append(new gui.MenuItem({label:"Like",click:function(){win.window.$('#playerLove').click();}}));
+trayMenu.append(new gui.MenuItem({label:"Like(⌘+Shift+R)",click:function(){win.window.$('#playerLove').click();}}));
 trayMenu.append(new gui.MenuItem({type:'separator'}));
 trayMenu.append(new gui.MenuItem({label:"Exit",click:function(){win.close(true)}}));
 tray.menu = trayMenu;
